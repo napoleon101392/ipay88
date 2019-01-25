@@ -6,13 +6,7 @@ use Napoleon\IPay88\Exceptions\BadMethodCallException;
 
 trait PaymentFormFields
 {
-    public function __construct()
-    {
-        $dotenv = \Dotenv\Dotenv::create(__DIR__);
-        $dotenv->load();
-    }
-
-    private function formOpen()
+    protected function formOpen()
     {
         $action = $this->endPoint($_ENV['IPAY88_PRODUCTION']);
 
@@ -33,7 +27,7 @@ trait PaymentFormFields
         return $this->fillable[$field] = $value;
     }
 
-    private function setPreDefinedFields()
+    protected function setPreDefinedFields()
     {
         $this->fillable['MerchantCode'] = $_ENV['IPAY88_MERCHANT_CODE'];
         $this->fillable['Currency'] = $_ENV['IPAY88_CURRENCY'];
@@ -41,7 +35,7 @@ trait PaymentFormFields
         $this->fillable['Signature'] = $this->generateSignature();
     }
 
-    private function generateSignature()
+    protected function generateSignature()
     {
         $source = implode('', [
             $_ENV['IPAY88_MERCHANT_KEY'],
@@ -54,7 +48,7 @@ trait PaymentFormFields
         return base64_encode(hex2bin(sha1($source)));
     }
 
-    private function trimAmount($subject)
+    protected function trimAmount($subject)
     {
         return preg_replace('/[.,]/', '', $subject);
     }
