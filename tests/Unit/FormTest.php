@@ -12,6 +12,7 @@ class FormTest extends TestCase
 {
     /**
      * @test
+     * @todo:: add constant on paymentid for redability
      * @group Positive
      */
     public function it_should_generate_a_form()
@@ -26,11 +27,11 @@ class FormTest extends TestCase
             'UserName' => 'napoleoncarino',
             'UserEmail' => 'napoleon@example.com',
             'UserContact' => '09123456789',
-            'ResponseURL' => '192.168.5.7/thank-you-for-your-donation/',
-            'BackendURL' => '192.168.5.7/wp-json/unicef/v1/ipay88/hook'
+            'ResponseURL' => 'www.your-response-url.com',
+            'BackendURL' => 'www.your-backend-url.com'
         ])->render();
 
-        $expected = "<form method='POST' action='https://sandbox.ipay88.com.ph/epayment/entry.asp' name='my-form-name'><input type='hidden' name='MerchantCode' value='PH00460'><input type='hidden' name='RefNo' value='175640054e84404ca35cd5f'><input type='hidden' name='Amount' value='129.03'><input type='hidden' name='PaymentId' value='1'><input type='hidden' name='Currency' value='PHP'><input type='hidden' name='Lang' value='ISO-8859-1'><input type='hidden' name='ProdDesc' value='Dummy Product Description'><input type='hidden' name='UserName' value='napoleoncarino'><input type='hidden' name='UserEmail' value='napoleon@example.com'><input type='hidden' name='UserContact' value='09123456789'><input type='hidden' name='Remark' value=''><input type='hidden' name='Signature' value='bUbV3I6Votzs6QUTPgJUQyTFDJQ='><input type='hidden' name='ResponseURL' value='192.168.5.7/thank-you-for-your-donation/'><input type='hidden' name='BackendURL' value='192.168.5.7/wp-json/unicef/v1/ipay88/hook'></form>";
+        $expected = "<form method='POST' action='https://sandbox.ipay88.com.ph/epayment/entry.asp' name='my-form-name'><input type='hidden' name='MerchantCode' value='PH00460'><input type='hidden' name='RefNo' value='175640054e84404ca35cd5f'><input type='hidden' name='Amount' value='129.03'><input type='hidden' name='PaymentId' value='1'><input type='hidden' name='Currency' value='PHP'><input type='hidden' name='Lang' value='ISO-8859-1'><input type='hidden' name='ProdDesc' value='Dummy Product Description'><input type='hidden' name='UserName' value='napoleoncarino'><input type='hidden' name='UserEmail' value='napoleon@example.com'><input type='hidden' name='UserContact' value='09123456789'><input type='hidden' name='Remark' value=''><input type='hidden' name='Signature' value='bUbV3I6Votzs6QUTPgJUQyTFDJQ='><input type='hidden' name='ResponseURL' value='www.your-response-url.com'><input type='hidden' name='BackendURL' value='www.your-backend-url.com'></form>";
 
         $this->assertEquals($expected, $html);
     }
@@ -38,6 +39,7 @@ class FormTest extends TestCase
     /**
      * @test
      * @group Negative
+     * @todo :: automatically float the amount
      * @expectedException \Napoleon\IPay88\Exceptions\RequiredFieldsException
      */
     public function it_should_return_required_field_exception()
@@ -69,6 +71,7 @@ class FormTest extends TestCase
     }
 
     /**
+     * @todo:: function name should be clear
      * @test
      * @group Negative
      * @expectedException \Napoleon\IPay88\Exceptions\BadMethodCallException
@@ -81,6 +84,7 @@ class FormTest extends TestCase
     }
 
     /**
+     * @todo:: endPoint function not clear
      * @test
      * @group Positive
      */

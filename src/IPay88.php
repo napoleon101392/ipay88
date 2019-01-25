@@ -16,6 +16,7 @@ class IPay88 extends PaymentGateway implements PaymentGatewayInterface
     /**
      * Filling up fields in array
      *
+     * @todo:: automatically float the amount
      * @return this
      */
     public function setRequestParameters(array $fields)
@@ -41,6 +42,8 @@ class IPay88 extends PaymentGateway implements PaymentGatewayInterface
 
     /**
      * Generate a form with fields
+     *
+     * @todo :: Remove FORM related in this class | Create FORM class for segregation instead of Traits
      *
      * @return string
      */
