@@ -10,7 +10,6 @@
         "homepage": "https://napoleon101392.github.io.com/me",
         "role": "Developer"
     }],
-    "minimum-stability": "dev",
     "require": {
         "php": ">=5.5",
         "mockery/mockery": "^1.2",
@@ -43,5 +42,7 @@
     },
     "config": {
         "sort-packages": true
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
