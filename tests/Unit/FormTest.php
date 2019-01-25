@@ -1,12 +1,12 @@
 <?php
 
-namespace IPay88\Tests\Unit;
+namespace Napoleon\IPay88\Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 
-use IPay88\Exceptions\BadMethodCallException;
-use IPay88\Exceptions\FieldNotAcceptableException;
-use IPay88\Exceptions\RequiredFieldsException;
+use Napoleon\IPay88\Exceptions\BadMethodCallException;
+use Napoleon\IPay88\Exceptions\FieldNotAcceptableException;
+use Napoleon\IPay88\Exceptions\RequiredFieldsException;
 
 class FormTest extends TestCase
 {
@@ -16,7 +16,7 @@ class FormTest extends TestCase
      */
     public function it_should_generate_a_form()
     {
-        $payment = new \IPay88\IPay88;
+        $payment = new \Napoleon\IPay88\IPay88;
 
         $html = $payment->setRequestParameters([
             'Amount' => (float)129.03,
@@ -38,11 +38,11 @@ class FormTest extends TestCase
     /**
      * @test
      * @group Negative
-     * @expectedException \IPay88\Exceptions\RequiredFieldsException
+     * @expectedException \Napoleon\IPay88\Exceptions\RequiredFieldsException
      */
     public function it_should_return_required_field_exception()
     {
-        $payment = new \IPay88\IPay88;
+        $payment = new \Napoleon\IPay88\IPay88;
 
         $payment->setRequestParameters([
             'Amount' => (float)129.03,
@@ -57,11 +57,11 @@ class FormTest extends TestCase
     /**
      * @test
      * @group Negative
-     * @expectedException \IPay88\Exceptions\FieldNotAcceptableException
+     * @expectedException \Napoleon\IPay88\Exceptions\FieldNotAcceptableException
      */
     public function it_should_throw_field_not_acceptable_exception()
     {
-        $payment = new \IPay88\IPay88;
+        $payment = new \Napoleon\IPay88\IPay88;
 
         $payment->setRequestParameters([
             'notexists' => 'eee'
@@ -71,11 +71,11 @@ class FormTest extends TestCase
     /**
      * @test
      * @group Negative
-     * @expectedException \IPay88\Exceptions\BadMethodCallException
+     * @expectedException \Napoleon\IPay88\Exceptions\BadMethodCallException
      */
     public function it_should_throw_error()
     {
-        $payment = new \IPay88\IPay88;
+        $payment = new \Napoleon\IPay88\IPay88;
 
         $payment->methodNotExists();
     }
@@ -86,7 +86,7 @@ class FormTest extends TestCase
      */
     public function it_should_return_sandbox_endpoint()
     {
-        $payment = new \IPay88\IPay88;
+        $payment = new \Napoleon\IPay88\IPay88;
 
         $endpoint = $payment->endPoint(false);
 
@@ -101,7 +101,7 @@ class FormTest extends TestCase
      */
     public function it_should_return_production_endpoint()
     {
-        $endpoint = (new \IPay88\IPay88)->endPoint(true);
+        $endpoint = (new \Napoleon\IPay88\IPay88)->endPoint(true);
 
         $expected = 'https://payment.ipay88.com.ph/epayment/entry.asp';
 

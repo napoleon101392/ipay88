@@ -1,6 +1,6 @@
 <?php
 
-namespace IPay88\Exceptions;
+namespace Napoleon\IPay88\Exceptions;
 
 class BadMethodCallException extends \Exception
 {

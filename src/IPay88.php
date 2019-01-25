@@ -1,13 +1,13 @@
 <?php
 
-namespace IPay88;
+namespace Napoleon\IPay88;
 
-use IPay88\Exceptions\FieldNotAcceptableException;
-use IPay88\Exceptions\RequiredFieldsException;
+use Napoleon\IPay88\Exceptions\FieldNotAcceptableException;
+use Napoleon\IPay88\Exceptions\RequiredFieldsException;
 
-use IPay88\PaymentGateway;
-use IPay88\Traits\PaymentFormFields;
-use IPay88\Contracts\PaymentGatewayInterface;
+use Napoleon\IPay88\PaymentGateway;
+use Napoleon\IPay88\Traits\PaymentFormFields;
+use Napoleon\IPay88\Contracts\PaymentGatewayInterface;
 
 class IPay88 extends PaymentGateway implements PaymentGatewayInterface
 {

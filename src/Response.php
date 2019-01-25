@@ -1,8 +1,8 @@
 <?php
 
-namespace IPay88;
+namespace Napoleon\IPay88;
 
-use IPay88\Exceptions\BadMethodCallException;
+use Napoleon\IPay88\Exceptions\BadMethodCallException;
 
 class Response
 {

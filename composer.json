@@ -23,12 +23,12 @@
     },
     "autoload": {
         "psr-4": {
-            "IPay88\\": "src"
+            "Napoleon\\IPay88\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "IPay88\\Tests\\": "tests"
+            "Napoleon\\IPay88\\Tests\\": "tests"
         }
     },
     "scripts": {

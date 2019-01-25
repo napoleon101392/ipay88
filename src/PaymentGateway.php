@@ -1,6 +1,6 @@
 <?php
 
-namespace IPay88;
+namespace Napoleon\IPay88;
 
 class PaymentGateway
 {

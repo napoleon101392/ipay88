@@ -1,8 +1,8 @@
 <?php
 
-namespace IPay88\Traits;
+namespace Napoleon\IPay88\Traits;
 
-use IPay88\Exceptions\BadMethodCallException;
+use Napoleon\IPay88\Exceptions\BadMethodCallException;
 
 trait PaymentFormFields
 {

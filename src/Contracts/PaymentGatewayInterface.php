@@ -1,6 +1,6 @@
 <?php
 
-namespace IPay88\Contracts;
+namespace Napoleon\IPay88\Contracts;
 
 interface PaymentGatewayInterface
 {
