@@ -1,16 +1,16 @@
 {
     "name": "napoleon/ipay88",
     "type": "library",
-    "description": "ipay88 library description",
+    "description": "ipay88 library",
     "keywords": ["ipay88", "payment gateway"],
     "homepage": "https://github.com/napoleon101392/ipay88",
-    "license": "MIT",
     "authors": [{
         "name": "napoleon",
         "email": "napoleon101392@gmail.com",
         "homepage": "https://napoleon101392.github.io.com/me",
         "role": "Developer"
     }],
+    "minimum-stability": "dev",
     "require": {
         "php": ">=5.5",
         "mockery/mockery": "^1.2",
