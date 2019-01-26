@@ -9,40 +9,26 @@ composer install napoleon\ipay88 dev-master
 
 #### Example code
 
+To generate form fields that are hidden.
+
 ``` php
-<?php
-
-namespace Your\Namespace;
-
 use Napoleon\IPay88\IPay88;
 
-class Controller
-{
-  const PAYMENT_METHOD = 1;
+$payment = new IPay88;
 
-  protected $payment;
+$payment->setRequestParameters([
+    'PaymentId' => 1,
+    'RefNo' => 'your-unique-ref-code',
+    'Amount' => 15,
+    'ProdDesc' => 'The description of the product',
+    'UserName' => 'John Doe',
+    'UserEmail' => 'john@example.com',
+    'UserContact' => '09123456789',
+    'ResponseURL' => 'www.your-response-url.com',
+    'BackendURL' => 'www.your-backend-url.com'
+]);
 
-  public function __construct()
-  {
-    $this->payment = new IPay88;
-  }
-
-  public function index()
-  {
-    $this->payment->setRequestParamaters([
-        'PaymentId' => self::PAYMENT_METHOD,
-        'RefNo' => 'your-unique-ref-code',
-        'Amount' => 15,
-        'ProdDesc' => ,
-        'UserName',
-        'UserEmail',
-        'UserContact',
-        'ResponseURL',
-        'BackendURL'
-    ]);
-
-    return $this->payment->render();
-  }
-}
+$payment->render();
 
 ```
+Or you can simply chain `$payment->setRequestParamaters([...])->render()`
