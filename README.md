@@ -20,7 +20,7 @@ $payment->setRequestParameters([
     'PaymentId' => 1,
     'RefNo' => 'your-unique-ref-code',
     'Amount' => 15,
-    'ProdDesc' => 'The description of the product',
+    'ProdDesc' => 'The description',
     'UserName' => 'John Doe',
     'UserEmail' => 'john@example.com',
     'UserContact' => '09123456789',
