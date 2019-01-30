@@ -14,7 +14,7 @@ class ResponseTest extends TestCase
      */
     public function it_should_echo_receive_ok()
     {
-        $_REQUEST = [ 'Status' => 1 ];
+        $_REQUEST = ['Status' => 1];
 
         $response = new \Napoleon\IPay88\Response($_REQUEST);
 
