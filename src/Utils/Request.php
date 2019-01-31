@@ -11,38 +11,13 @@ class Request
 
     const SANDBOX_POST_URL = 'https://sandbox.ipay88.com.ph/epayment/entry.asp';
 
+    protected $fillable;
+
+    protected $required_fields;
+
     protected $posting_url;
 
-    protected $parameters = [];
-
-    public $fillable = [
-        'MerchantCode' => null,
-        'RefNo' => null,
-        'Amount' => null,
-        'PaymentId' => null,
-        'Currency' => null,
-        'Lang' => null,
-        'ProdDesc' => null,
-        'UserName' => null,
-        'UserEmail' => null,
-        'UserContact' => null,
-        'Remark' => null,
-        'Signature' => null,
-        'ResponseURL' => null,
-        'BackendURL' => null
-    ];
-
-    protected $required_fields = [
-        'PaymentId',
-        'RefNo',
-        'Amount',
-        'ProdDesc',
-        'UserName',
-        'UserEmail',
-        'UserContact',
-        'ResponseURL',
-        'BackendURL'
-    ];
+    protected $parameters;
 
     /**
      * @todo :: Create exception
@@ -63,7 +38,7 @@ class Request
         return $this;
     }
 
-    public function parameters($fields)
+    public function setParameters($fields)
     {
         $this->parameters = $fields;
 

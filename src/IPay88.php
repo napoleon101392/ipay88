@@ -3,7 +3,7 @@
 namespace Napoleon\IPay88;
 
 use Napoleon\IPay88\Utils\Form;
-use Napoleon\IPay88\Utils\Request;
+use Napoleon\IPay88\IPay88Request;
 use Napoleon\IPay88\Contracts\PaymentGatewayInterface;
 use Napoleon\IPay88\Exceptions\BadMethodCallException;
 
@@ -17,7 +17,7 @@ class IPay88 implements PaymentGatewayInterface
     {
         $this->form = new Form;
 
-        $this->request = new Request;
+        $this->request = new IPay88Request;
     }
 
     /**
@@ -28,7 +28,7 @@ class IPay88 implements PaymentGatewayInterface
      */
     public function setRequestParameters(array $fields)
     {
-        $this->request->parameters($fields)->validate();
+        $this->request->setParameters($fields)->validate();
 
         return $this;
     }
