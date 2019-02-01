@@ -2,40 +2,33 @@
 
 namespace Napoleon\IPay88;
 
-use Napoleon\IPay88\Exceptions\FieldNotAcceptableException;
-use Napoleon\IPay88\Exceptions\RequiredFieldsException;
-
-use Napoleon\IPay88\PaymentGateway;
-use Napoleon\IPay88\Traits\PaymentFormFields;
 use Napoleon\IPay88\Contracts\PaymentGatewayInterface;
+use Napoleon\IPay88\Exceptions\BadMethodCallException;
+use Napoleon\IPay88\IPay88Request;
+use Napoleon\IPay88\Utils\Form;
 
-class IPay88 extends PaymentGateway implements PaymentGatewayInterface
+class IPay88 implements PaymentGatewayInterface
 {
-    use PaymentFormFields;
+    protected $form;
+
+    protected $request;
+
+    public function __construct()
+    {
+        $this->form = new Form;
+
+        $this->request = new IPay88Request;
+    }
 
     /**
      * Filling up fields in array
      *
      * @todo:: automatically float the amount
-     * @return this
+     * @return $this
      */
     public function setRequestParameters(array $fields)
     {
-        foreach ($fields as $field => $value) {
-            if (! array_key_exists($field, $this->fillable)) {
-                throw new FieldNotAcceptableException("Field: {$field} not acceptable", true);
-            }
-
-            foreach($this->required_fields as $required_field){
-                if (! array_key_exists($required_field, $fields)) {
-                    throw new RequiredFieldsException("Refer to the IPay88 documentation for the required fields", true);
-                }
-            }
-
-            $this->setField($field, $value);
-        }
-
-        $this->setPreDefinedFields();
+        $this->request->setParameters($fields)->validate();
 
         return $this;
     }
@@ -43,20 +36,22 @@ class IPay88 extends PaymentGateway implements PaymentGatewayInterface
     /**
      * Generate a form with fields
      *
-     * @todo :: Remove FORM related in this class | Create FORM class for segregation instead of Traits
-     *
      * @return string
      */
     public function render()
     {
-        $html = $this->formOpen();
+        return $this->form->create($this->request->getParams())->html();
+    }
 
-        foreach ($this->fillable as $field => $value) {
-            $html .= "<input type='hidden' name='{$field}' value='{$value}'>";
-        }
-
-        $html .= "</form>";
-
-        return $html;
+    /**
+     * Trigger when calling a function not exists
+     *
+     * @param  String $method
+     * @param  Array $parameter
+     * @throws \IPay88\Exceptions\BadMethodCallException;
+     */
+    public function __call($method, $parameter)
+    {
+        throw new BadMethodCallException(sprintf('Method %s does not exist.', $method), true);
     }
 }
