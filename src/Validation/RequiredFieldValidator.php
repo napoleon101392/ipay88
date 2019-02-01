@@ -8,6 +8,5 @@ class RequiredFieldValidator implements ValidatorInterface
 {
     public function check($parameters, $comparison)
     {
-
     }
 }

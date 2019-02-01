@@ -30,11 +30,11 @@ class Response
      *
      * @return
      */
-    public function run(Callable $callback)
+    public function run(callable $callback)
     {
         $this->init();
 
-        $status = (int)$this->getFields('Status');
+        $status = (int) $this->getFields('Status');
 
         $callback($status);
 
@@ -49,7 +49,7 @@ class Response
      */
     public function getFields($field = null)
     {
-        if (! is_null($field)) {
+        if (!is_null($field)) {
             return $this->fields[$field];
         }
 

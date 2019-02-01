@@ -4,8 +4,6 @@ namespace Napoleon\IPay88\Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 
-use Napoleon\IPay88\Exceptions\BadMethodCallException;
-
 class ResponseTest extends TestCase
 {
     /**

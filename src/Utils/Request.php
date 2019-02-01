@@ -48,7 +48,7 @@ class Request
     public function validate()
     {
         foreach ($this->parameters as $field => $value) {
-            if (! array_key_exists($field, $this->fillable)) {
+            if (!array_key_exists($field, $this->fillable)) {
                 throw new FieldNotAcceptableException("Field: {$field} not acceptable", true);
             }
 
@@ -56,15 +56,15 @@ class Request
         }
 
         foreach ($this->required_fields as $required_field) {
-            if (! array_key_exists($required_field, $this->parameters)) {
+            if (!array_key_exists($required_field, $this->parameters)) {
                 throw new RequiredFieldsException("Refer to the IPay88 documentation for the required fields", true);
             }
         }
 
         $this->fillable['MerchantCode'] = env('IPAY88_MERCHANT_CODE');
-        $this->fillable['Currency'] = env('IPAY88_CURRENCY');
-        $this->fillable['Lang'] = env('IPAY88_LANG');
-        $this->fillable['Signature'] = $this->generateSignature();
+        $this->fillable['Currency']     = env('IPAY88_CURRENCY');
+        $this->fillable['Lang']         = env('IPAY88_LANG');
+        $this->fillable['Signature']    = $this->generateSignature();
     }
 
     public function getPostingUrl()
@@ -79,7 +79,7 @@ class Request
 
     public function getParams($field = null)
     {
-        if (! is_null($field)) {
+        if (!is_null($field)) {
             return $this->fillable[$field];
         }
 
@@ -93,7 +93,7 @@ class Request
             env('IPAY88_MERCHANT_CODE'),
             $this->fillable['RefNo'],
             trimAmount($this->fillable['Amount']),
-            $this->fillable['Currency']
+            $this->fillable['Currency'],
         ]);
 
         return base64_encode(hex2bin(sha1($source)));

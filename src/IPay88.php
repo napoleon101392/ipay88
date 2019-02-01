@@ -2,10 +2,10 @@
 
 namespace Napoleon\IPay88;
 
-use Napoleon\IPay88\Utils\Form;
-use Napoleon\IPay88\IPay88Request;
 use Napoleon\IPay88\Contracts\PaymentGatewayInterface;
 use Napoleon\IPay88\Exceptions\BadMethodCallException;
+use Napoleon\IPay88\IPay88Request;
+use Napoleon\IPay88\Utils\Form;
 
 class IPay88 implements PaymentGatewayInterface
 {

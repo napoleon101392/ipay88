@@ -1,6 +1,6 @@
 <?php
 
-if (! function_exists('env')) {
+if (!function_exists('env')) {
     /**
      * Gets the value of an environment variable. Supports boolean, empty and null.
      *
@@ -38,7 +38,7 @@ if (! function_exists('env')) {
     }
 }
 
-if (! function_exists('trimAmount')) {
+if (!function_exists('trimAmount')) {
     function trimAmount($subject)
     {
         return preg_replace('/[.,]/', '', $subject);

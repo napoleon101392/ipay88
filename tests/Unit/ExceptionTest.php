@@ -2,11 +2,10 @@
 
 namespace Napoleon\IPay88\Tests\Unit;
 
-use PHPUnit\Framework\TestCase;
-
 use Napoleon\IPay88\Exceptions\BadMethodCallException;
-use Napoleon\IPay88\Exceptions\RequiredFieldsException;
 use Napoleon\IPay88\Exceptions\FieldNotAcceptableException;
+use Napoleon\IPay88\Exceptions\RequiredFieldsException;
+use PHPUnit\Framework\TestCase;
 
 class ExceptionTest extends TestCase
 {
@@ -20,7 +19,7 @@ class ExceptionTest extends TestCase
         $payment = new \Napoleon\IPay88\IPay88;
 
         $payment->setRequestParameters([
-            'notexists' => 'eee'
+            'notexists' => 'eee',
         ]);
     }
 
@@ -35,12 +34,12 @@ class ExceptionTest extends TestCase
         $payment = new \Napoleon\IPay88\IPay88;
 
         $payment->setRequestParameters([
-            'Amount' => (float)129.03,
-            'RefNo' => '175640054e84404ca35cd5f',
-            'ProdDesc' => 'Dummy Product Description',
-            'UserName' => 'napoleoncarino',
-            'UserEmail' => 'napoleon@example.com',
-            'UserContact' => '09123456789'
+            'Amount'      => (float) 129.03,
+            'RefNo'       => '175640054e84404ca35cd5f',
+            'ProdDesc'    => 'Dummy Product Description',
+            'UserName'    => 'napoleoncarino',
+            'UserEmail'   => 'napoleon@example.com',
+            'UserContact' => '09123456789',
         ]);
     }
 

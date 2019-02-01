@@ -2,9 +2,8 @@
 
 namespace Napoleon\IPay88\Tests\Unit;
 
-use PHPUnit\Framework\TestCase;
-
 use Napoleon\IPay88\Contracts\ValidatorInterface;
+use PHPUnit\Framework\TestCase;
 
 class ValidationTest extends TestCase
 {
@@ -14,7 +13,7 @@ class ValidationTest extends TestCase
      */
     public function it_should_be_an_instance_of_validator_interface()
     {
-        $form_field_validator = new \Napoleon\IPay88\Validation\FormFieldValidator;
+        $form_field_validator     = new \Napoleon\IPay88\Validation\FormFieldValidator;
         $required_field_validator = new \Napoleon\IPay88\Validation\RequiredFieldValidator;
 
         $this->assertInstanceOf(ValidatorInterface::class, $form_field_validator);

@@ -2,9 +2,9 @@
 
 namespace Napoleon\IPay88\Validation;
 
-use Napoleon\IPay88\Utils\Request;
 use Napoleon\IPay88\Contracts\ValidatorInterface;
 use Napoleon\IPay88\Exceptions\FieldNotAcceptableException;
+use Napoleon\IPay88\Utils\Request;
 
 class FormFieldValidator implements ValidatorInterface
 {
@@ -18,7 +18,7 @@ class FormFieldValidator implements ValidatorInterface
     public function check($parameters, $comparison)
     {
         foreach ($parameters as $field => $value) {
-            if (! array_key_exists($field, $comparison)) {
+            if (!array_key_exists($field, $comparison)) {
                 throw new FieldNotAcceptableException("Field: {$field} not acceptable", true);
             }
 
