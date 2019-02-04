@@ -11,7 +11,7 @@ class Response
 
     public function __construct()
     {
-        $this->fields = $_REQUEST;
+        $this->fields = $_POST;
     }
 
     /**
