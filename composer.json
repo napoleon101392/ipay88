@@ -31,7 +31,7 @@
             "Napoleon\\IPay88\\Tests\\": "tests"
         },
         "files": [
-            "helpers.php"
+            "src/includes/helpers.php"
         ]
     },
     "scripts": {
