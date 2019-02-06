@@ -24,15 +24,15 @@
     "autoload": {
         "psr-4": {
             "Napoleon\\IPay88\\": "src"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Napoleon\\IPay88\\Tests\\": "tests"
         },
         "files": [
             "src/includes/helpers.php"
         ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Napoleon\\IPay88\\Tests\\": "tests"
+        }
     },
     "scripts": {
         "test": "phpunit",
