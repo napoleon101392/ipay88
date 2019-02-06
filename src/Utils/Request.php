@@ -92,7 +92,7 @@ class Request
             env('IPAY88_MERCHANT_KEY'),
             env('IPAY88_MERCHANT_CODE'),
             $this->fillable['RefNo'],
-            trimAmount(number_format($this->fillable['Amount'], 2)),
+            trimAmount($this->fillable['Amount']),
             $this->fillable['Currency'],
         ]);
 
