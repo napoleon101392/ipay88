@@ -5,7 +5,6 @@
   <img class="total_img" src="https://poser.pugx.org/napoleon/ipay88/downloads?format=flat-square">
   <img class="latest_unstable_version_img" src="https://poser.pugx.org/napoleon/ipay88/v/unstable?format=flat-square">
   <img class="license_img" src="https://poser.pugx.org/napoleon/ipay88/license?format=flat-square">
-  <img class="composer_img" src="/phpunit/phpunit/composerlock?format=flat-square">
 </p>
 
 #### Installation
