@@ -1,6 +1,12 @@
-[![Latest Stable Version](https://poser.pugx.org/napoleon/ipay88/v/stable)](https://packagist.org/packages/napoleon/ipay88)
-[![Total Downloads](https://poser.pugx.org/napoleon/ipay88/downloads)](https://packagist.org/packages/napoleon/ipay88)
-[![License](https://poser.pugx.org/napoleon/ipay88/license)](https://packagist.org/packages/napoleon/ipay88)
+<p align="center">
+  <img src="https://www.ipay88.com/image/ipay88_logo_wide.png" width="200" title="hover text">
+  <br />
+  <img class="latest_stable_version_img" src="https://poser.pugx.org/napoleon/ipay88/v/stable?format=flat-square">
+  <img class="total_img" src="https://poser.pugx.org/napoleon/ipay88/downloads?format=flat-square">
+  <img class="latest_unstable_version_img" src="https://poser.pugx.org/napoleon/ipay88/v/unstable?format=flat-square">
+  <img class="license_img" src="https://poser.pugx.org/napoleon/ipay88/license?format=flat-square">
+  <img class="composer_img" src="/phpunit/phpunit/composerlock?format=flat-square">
+</p>
 
 #### Installation
 ``` sh
@@ -51,7 +57,7 @@ $response->run( function($success) {
     if (! $success) {
         return # Do something if it success
     }
-    
+
     return # Do something if it fails
 });
 ```
