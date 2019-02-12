@@ -1,5 +1,7 @@
 <?php
 
+require_once '../bin/autoload.php';
+
 if (!function_exists('env')) {
     /**
      * Gets the value of an environment variable. Supports boolean, empty and null.
