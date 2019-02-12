@@ -44,7 +44,7 @@ class FormTest extends TestCase
         $payment = new \Napoleon\IPay88\IPay88;
 
         $html = $payment->setRequestParameters([
-            'Amount'      => (float) 15.00,
+            'Amount'      => (float) 129.03,
             'PaymentId'   => 1,
             'RefNo'       => 'A00000001',
             'ProdDesc'    => 'Dummy Product Description',
@@ -55,7 +55,7 @@ class FormTest extends TestCase
             'BackendURL'  => 'www.your-backend-url.com',
         ])->render();
 
-        $expected = "<form method='POST' action='https://sandbox.ipay88.com.ph/epayment/entry.asp' name='my-form-name'><input type='hidden' name='MerchantCode' value='PH00001'><input type='hidden' name='RefNo' value='A00000001'><input type='hidden' name='Amount' value='15.00'><input type='hidden' name='PaymentId' value='1'><input type='hidden' name='Currency' value='PHP'><input type='hidden' name='Lang' value='ISO-8859-1'><input type='hidden' name='ProdDesc' value='Dummy Product Description'><input type='hidden' name='UserName' value='napoleoncarino'><input type='hidden' name='UserEmail' value='napoleon@example.com'><input type='hidden' name='UserContact' value='09123456789'><input type='hidden' name='Remark' value=''><input type='hidden' name='Signature' value='f53pzql3p1gIRvoLZgBmadpcenE='><input type='hidden' name='ResponseURL' value='www.your-response-url.com'><input type='hidden' name='BackendURL' value='www.your-backend-url.com'></form>";
+        $expected = "<form method='POST' action='https://sandbox.ipay88.com.ph/epayment/entry.asp' name='my-form-name'><input type='hidden' name='MerchantCode' value='PH00001'><input type='hidden' name='RefNo' value='A00000001'><input type='hidden' name='Amount' value='129.03'><input type='hidden' name='PaymentId' value='1'><input type='hidden' name='Currency' value='PHP'><input type='hidden' name='Lang' value='ISO-8859-1'><input type='hidden' name='ProdDesc' value='Dummy Product Description'><input type='hidden' name='UserName' value='napoleoncarino'><input type='hidden' name='UserEmail' value='napoleon@example.com'><input type='hidden' name='UserContact' value='09123456789'><input type='hidden' name='Remark' value=''><input type='hidden' name='Signature' value='iBGblPHK3XRRxAhfHxSxfw2jav8='><input type='hidden' name='ResponseURL' value='www.your-response-url.com'><input type='hidden' name='BackendURL' value='www.your-backend-url.com'></form>";
 
         $this->assertEquals($expected, $html);
     }
