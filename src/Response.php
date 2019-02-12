@@ -18,7 +18,7 @@ class Response
      * Initialize the API, so that the
      * gateway can understand the situation xD
      *
-     * @return void
+     * @return String
      */
     public function init()
     {
