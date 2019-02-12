@@ -3,6 +3,5 @@ php:
   - '5.6'
 before_script:
   - cp .env.example .env
-  - hhvm -d hhvm.php5.6.builtins=1 ../composer.phar require
   - composer install
   - composer dumpautoload -o
