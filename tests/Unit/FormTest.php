@@ -44,7 +44,7 @@ class FormTest extends TestCase
         $payment = new \Napoleon\IPay88\IPay88;
 
         $html = $payment->setRequestParameters([
-            'Amount'      => (float) 129.03,
+            'Amount'      => 15.00,
             'PaymentId'   => 1,
             'RefNo'       => 'A00000001',
             'ProdDesc'    => 'Dummy Product Description',
