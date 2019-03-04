@@ -32,7 +32,7 @@ class Response
      */
     public function run(callable $callback)
     {
-        $this->init();
+        echo $this->init();
 
         $status = (int) $this->getFields('Status');
 
