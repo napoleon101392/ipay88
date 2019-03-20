@@ -16,7 +16,8 @@ composer install napoleon\ipay88 dev-master
 
 #### Example code
 
-To generate form fields that are hidden.
+To generate form fields that are hidden,
+this will use in `page hopping`.
 
 ``` php
 <?php
@@ -68,4 +69,11 @@ $response->run( function($success) {
 `$success` variable is the `boolean` status of the transaction record made by the user.
 
 `$response->getFields()` will return `ALL` the `data` available from IPay88, the function optionally wants an string data, to be specify what field you want to get.
+
+#### Todos:
+- [ ] function to send a http request.
+- [ ] function that requery the transaction
+
+#### Note:
+Feel free to edit this doc and create PR for the missing todos.
 
