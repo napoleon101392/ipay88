@@ -56,10 +56,10 @@ use Napoleon\IPay88\Response;
 $response = new Response;
 
 $response->run( function($success) {
-    if (! $success) {
-        return # Do something if it success
+    if ($success) {
+        return # Do something if it succeed
     }
-
+    
     return # Do something if it fails
 });
 ```
