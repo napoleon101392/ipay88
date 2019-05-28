@@ -1,5 +1,4 @@
 <?php
-
 if (!function_exists('env')) {
     /**
      * Gets the value of an environment variable. Supports boolean, empty and null.
@@ -10,7 +9,7 @@ if (!function_exists('env')) {
      */
     function env($key, $default = null)
     {
-        $dotenv = \Dotenv\Dotenv::create(__DIR__);
+        $dotenv = new \Dotenv\Dotenv(__DIR__);
         $dotenv->load();
 
         $value = $_ENV[$key];

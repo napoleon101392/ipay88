@@ -24,9 +24,7 @@
         "psr-4": {
             "Napoleon\\IPay88\\": "src"
         },
-        "files": [
-            "src/includes/helpers.php"
-        ]
+        "files": ["helpers.php"]
     },
     "autoload-dev": {
         "psr-4": {

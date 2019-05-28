@@ -19,7 +19,7 @@ class FormFieldValidator implements ValidatorInterface
     {
         foreach ($parameters as $field => $value) {
             if (!array_key_exists($field, $comparison)) {
-                throw new FieldNotAcceptableException("Field: {$field} not acceptable", true);
+                throw new FieldNotAcceptableException("Field: $field not acceptable", 1);
             }
 
             $this->request->setField($field, $value);

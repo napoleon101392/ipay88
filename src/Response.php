@@ -18,7 +18,7 @@ class Response
      * Initialize the API, so that the
      * gateway can understand the situation xD
      *
-     * @return void
+     * @return String
      */
     public function init()
     {
@@ -32,7 +32,7 @@ class Response
      */
     public function run(callable $callback)
     {
-        $this->init();
+        echo $this->init();
 
         $status = (int) $this->getFields('Status');
 

@@ -5,6 +5,8 @@
   <img class="total_img" src="https://poser.pugx.org/napoleon/ipay88/downloads?format=flat-square">
   <img class="latest_unstable_version_img" src="https://poser.pugx.org/napoleon/ipay88/v/unstable?format=flat-square">
   <img class="license_img" src="https://poser.pugx.org/napoleon/ipay88/license?format=flat-square">
+  <img src="https://scrutinizer-ci.com/g/napoleon101392/ipay88/badges/quality-score.png?b=master">
+  <img src="https://travis-ci.org/napoleon101392/ipay88.svg?branch=master">
 </p>
 
 #### Installation
@@ -14,7 +16,8 @@ composer install napoleon\ipay88 dev-master
 
 #### Example code
 
-To generate form fields that are hidden.
+To generate form fields that are hidden,
+this will use in `page hopping`.
 
 ``` php
 <?php
@@ -53,10 +56,10 @@ use Napoleon\IPay88\Response;
 $response = new Response;
 
 $response->run( function($success) {
-    if (! $success) {
-        return # Do something if it success
+    if ($success) {
+        return # Do something if it succeed
     }
-
+    
     return # Do something if it fails
 });
 ```
@@ -66,4 +69,11 @@ $response->run( function($success) {
 `$success` variable is the `boolean` status of the transaction record made by the user.
 
 `$response->getFields()` will return `ALL` the `data` available from IPay88, the function optionally wants an string data, to be specify what field you want to get.
+
+#### Todos:
+- [ ] function to send a http request.
+- [ ] function that requery the transaction
+
+#### Note:
+Feel free to edit this doc and create PR for the missing todos.
 
