@@ -11,7 +11,7 @@
 
 #### Installation
 ``` sh
-composer install napoleon\ipay88 dev-master
+composer install napoleon/ipay88 dev-master
 ```
 
 #### Example code
