@@ -3,7 +3,6 @@
   <br />
   <img class="latest_stable_version_img" src="https://poser.pugx.org/napoleon/ipay88/v/stable?format=flat-square">
   <img class="total_img" src="https://poser.pugx.org/napoleon/ipay88/downloads?format=flat-square">
-  <img class="latest_unstable_version_img" src="https://poser.pugx.org/napoleon/ipay88/v/unstable?format=flat-square">
   <img class="license_img" src="https://poser.pugx.org/napoleon/ipay88/license?format=flat-square">
   <img src="https://scrutinizer-ci.com/g/napoleon101392/ipay88/badges/quality-score.png?b=master">
   <img src="https://travis-ci.org/napoleon101392/ipay88.svg?branch=master">
