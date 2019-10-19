@@ -2,7 +2,7 @@
     "name": "napoleon/ipay88",
     "type": "library",
     "description": "ipay88 library",
-    "keywords": ["ipay88", "payment gateway"],
+    "keywords": ["ipay88 library", "payment gateway"],
     "homepage": "https://github.com/napoleon101392/ipay88",
     "authors": [{
         "name": "napoleon",
